@@ -34,7 +34,10 @@
             @Html.DisplayNameFor(model => model.Premium.Students)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Premium.Students.Email)
+            @if (Model.Premium.Students?.Email != null)
+            {
+                @Html.DisplayFor(model => model.Premium.Students!.Email)
+            }
         </dd>
     </dl>
     

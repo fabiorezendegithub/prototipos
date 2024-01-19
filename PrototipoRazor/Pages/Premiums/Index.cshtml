@@ -41,7 +41,10 @@
                 @Html.DisplayFor(modelItem => item.EndDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Students.Email)
+                    @if (item.Students != null && item.Students.Email != null)
+                    {
+                        @Html.DisplayFor(_ => item.Students.Email)
+                    }
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
